@@ -9,4 +9,3 @@ spring:
           predicates:
             - Path=/api/user-service/**  # /user/** ??? ? ???? ??
 
-\
