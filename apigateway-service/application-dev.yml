@@ -9,3 +9,5 @@ spring:
           predicates:
             - Path=/api/user-service/**  # /user/** ??? ? ???? ??
 
+jwt:
+  secret: ${JWT_SECRET}
