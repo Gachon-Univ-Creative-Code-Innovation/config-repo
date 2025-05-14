@@ -1,0 +1,12 @@
+
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: http://localhost:8081  # ??? EKS??? DNS ??? ??
+          predicates:
+            - Path=/api/user-service/**  # /user/** ??? ? ???? ???
+
+\
