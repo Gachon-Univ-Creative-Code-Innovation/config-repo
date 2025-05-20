@@ -6,6 +6,10 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: self
+          uri: http://localhost:8000
+          predicates:
+            - Path=/api/apigateway-service/health-check
         - id: user-service
           uri: http://localhost:8081  # ??? EKS??? DNS ??? ??
           predicates:
