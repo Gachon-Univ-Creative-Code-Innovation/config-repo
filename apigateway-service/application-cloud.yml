@@ -9,7 +9,9 @@ spring:
         - id: self
           uri: http://127.0.0.1:8000
           predicates:
+            - Host=a-log.site
             - Path=/api/apigateway-service/health-check
+
         - id: user-service
           uri: http://localhost:8081
           predicates:
