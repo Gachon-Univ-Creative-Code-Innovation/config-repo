@@ -1,15 +1,13 @@
-spring:
-  profiles: cloud
+
 
 server:
   port: 8000
   forward-headers-strategy: framework
 
 spring:
+  profiles: cloud
   application:
     name: apigateway-service
-  profiles:
-    active: cloud
   config:
     import: "optional:configserver:"
   cloud:
