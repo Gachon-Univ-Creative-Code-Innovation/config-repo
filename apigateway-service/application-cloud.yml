@@ -13,7 +13,7 @@ spring:
           predicates:
             - Path=/api/user-service/**
         - id: apigateway-health
-          uri: forward:/api/apigateway-service/health-check
+          uri: forward:/health-check
           predicates:
             - Path=/api/apigateway-service/health-check
 jwt:
