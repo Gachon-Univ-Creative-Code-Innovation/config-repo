@@ -7,8 +7,6 @@ spring:
     name: apigateway-service
   cloud:
     gateway:
-      ignored-paths:
-        - /api/apigateway-service/**
       routes:
         - id: user-service
           uri: http://localhost:8081
