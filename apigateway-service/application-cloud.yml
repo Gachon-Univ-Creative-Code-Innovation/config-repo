@@ -3,7 +3,18 @@ server:
   forward-headers-strategy: framework
 
 spring:
+  application:
+    name: apigateway-service
+  profiles:
+    active: cloud
+  config:
+    import: "optional:configserver:"
   cloud:
+    config:
+      uri: http://config-service.config.svc.cluster.local:8888
+      name: apigateway-service
+      label: main
+      fail-fast: true
     gateway:
       routes:
         - id: health-check
@@ -17,23 +28,6 @@ spring:
             
 jwt:
   secret: ${JWT_SECRET}
-
-
-
-spring:
-  config:
-    import: "optional:configserver:"
-  cloud:
-    config:
-      uri: http://config-service.config.svc.cluster.local:8888
-#      uri: http://localhost:8888
-      name: apigateway-service
-      label: main
-      fail-fast: true
-  application:
-    name: apigateway-service
-  profiles:
-    active: cloud
 
 logging:
   level:
