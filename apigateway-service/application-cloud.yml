@@ -16,6 +16,8 @@ spring:
           uri: forward:/health-check
           predicates:
             - Path=/api/apigateway-service/health-check
+          filters:
+            - StripPrefix=2
 jwt:
   secret: ${JWT_SECRET}
 
