@@ -1,0 +1,82 @@
+spring:
+  application:
+    name: user-service
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mail:
+    host: smtp.naver.com
+    port: 587
+    username: alog_gachon@naver.com
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  data:
+    redis:
+      host: ${REDIS_HOST}   # e.g., redis-service 혹은 클라우드 Redis 호스트
+      port: 6379
+  datasource:
+    url: ${CLOUD_DB_URL}
+    username: ${CLOUD_DB_USERNAME}
+    password: ${CLOUD_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    open-in-view: false
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}  # e.g., kafka-service:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-expiration: 60
+  refresh-expiration: 3000
+  reset-password-expiration: 15
+
+oauth:
+  google:
+    client-id: ${GOOGLE_CLIENT_ID}
+    client-secret: ${GOOGLE_CLIENT_SECRET}
+    redirect-uri: https://a-log.site/oauth/google/redirect
+  kakao:
+    client-id: ${KAKAO_CLIENT_ID}
+    redirect-uri: https://a-log.site/oauth/kakao/redirect
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+cloud:
+  aws:
+    credentials:
+      access-key: ${AWS_S3_ACCESS_KEY}
+      secret-key: ${AWS_S3_SECRET_KEY}
+    region:
+      static: ${AWS_S3_REGION}
+    s3:
+      bucket: ${AWS_S3_BUCKET_NAME}
+    stack:
+      auto: false
+
+server:
+  port: 0
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.hibernate.SQL: WARN
