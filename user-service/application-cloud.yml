@@ -80,3 +80,5 @@ logging:
   level:
     org.springframework.web: INFO
     org.hibernate.SQL: WARN
+server:
+  port: 8080
