@@ -12,12 +12,17 @@ spring:
           uri: http://user-service.user.svc.cluster.local:8080
           predicates:
             - Path=/api/user-service/**
+        - id: summarize-service
+          uri: http://summarize-service.summarize.svc.cluster.local:8500
+          predicates:
+            - Path=/api/summarize-service/**
         - id: apigateway-health
           uri: forward:/health-check
           predicates:
             - Path=/api/apigateway-service/health-check
           filters:
             - StripPrefix=2
+
 jwt:
   secret: ${JWT_SECRET}
 
