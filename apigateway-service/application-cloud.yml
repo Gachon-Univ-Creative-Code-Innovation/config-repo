@@ -16,6 +16,10 @@ spring:
           uri: http://summarize-service.summarize.svc.cluster.local:8500
           predicates:
             - Path=/api/summarize-service/**
+        - id: matching-service
+          uri: http://fastapi-consumer-service.matching.svc.cluster.local:80
+          predicates:
+            - Path=/api/matching-service/**
         - id: apigateway-health
           uri: forward:/health-check
           predicates:
