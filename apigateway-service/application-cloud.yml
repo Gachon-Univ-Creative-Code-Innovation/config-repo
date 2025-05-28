@@ -12,14 +12,44 @@ spring:
           uri: http://user-service.user.svc.cluster.local:8080
           predicates:
             - Path=/api/user-service/**
+
         - id: summarize-service
           uri: http://summarize-service.summarize.svc.cluster.local:8500
           predicates:
             - Path=/api/summarize-service/**
+
+        - id: message-service
+          uri: http://message-service.message.svc.cluster.local:8080
+          predicates:
+            - Path=/api/message-service/**
+
+        - id: websocket-message-service
+          uri: ws://message-service.message.svc.cluster.local:8080
+          predicates:
+            - Path=/ws/chat
+            -
+        - id: alarm-service
+          uri: http://alarm-service.alarm.svc.cluster.local:8080
+          predicates:
+            - Path=/api/alarm-service/**
+
+        - id: github-service
+          uri: http://github-service.github.svc.cluster.local:8080
+          predicates:
+            - Path=/api/career-service/**
+          filters:
+            - RewritePath=/api/career-service/(?<segment>.*), /api/career/${segment}
+
+        - id: blog-service
+          uri: http://blog-service.blog.svc.cluster.local:8080
+          predicates:
+            - Path=/api/blog-service/**
+
         - id: matching-service
           uri: http://fastapi-consumer-service.matching.svc.cluster.local:80
           predicates:
             - Path=/api/matching-service/**
+
         - id: apigateway-health
           uri: forward:/health-check
           predicates:
