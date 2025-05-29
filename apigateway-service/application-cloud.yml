@@ -27,7 +27,7 @@ spring:
           uri: ws://message-service.message.svc.cluster.local:8080
           predicates:
             - Path=/ws/chat
-            -
+            
         - id: alarm-service
           uri: http://alarm-service.alarm.svc.cluster.local:8080
           predicates:
