@@ -3,9 +3,9 @@ spring:
     name: blog-service
 
   datasource:
-    url: ${LOCAL_DB_URL}
-    username: ${LOCAL_DB_USERNAME}
-    password: ${LOCAL_DB_PASSWORD}
+    url: ${CLOUD_DB_URL}
+    username: ${CLOUD_DB_URL}
+    password: ${CLOUD_DB_URL}
     driver-class-name: org.postgresql.Driver  # (optional, 대부분 auto detect 되지만 명시해도 좋음)
   jpa:
     hibernate:
@@ -17,12 +17,12 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   data:
     mongodb:
-      host: localhost
+      host: ${MONGO_DB_HOST} # ${MONGO_DB_HOST} mongo
       port: 27017
       authentication-database: admin
       database: alog
     elasticsearch:
-      uris: localhost:9200
+      uris: ${ELASTICSEARCH_URIS}
       repositories:
         enabled: true
       connection-timeout: 5s
