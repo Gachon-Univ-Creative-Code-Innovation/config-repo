@@ -41,7 +41,7 @@ spring:
             - RewritePath=/api/career-service/(?<segment>.*), /api/career/${segment}
 
         - id: blog-service
-          uri: http://blog-service.blog.svc.cluster.local:8080
+          uri: http://blog-service.blog.svc.cluster.local:8040
           predicates:
             - Path=/api/blog-service/**
 
