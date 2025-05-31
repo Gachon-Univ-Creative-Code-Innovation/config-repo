@@ -15,12 +15,15 @@ spring:
       hibernate:
         format_sql: true  # SQL 로그 보기 좋게 포맷
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  # data:
+  #   mongodb:
+  #     host: ${MONGO_DB_HOST} # ${MONGO_DB_HOST} mongo
+  #     port: 27017
+  #     authentication-database: admin
+  #     database: alog
   data:
     mongodb:
-      host: ${MONGO_DB_HOST} # ${MONGO_DB_HOST} mongo
-      port: 27017
-      authentication-database: admin
-      database: alog
+      uri: ${MONGO_DB_URI}
     elasticsearch:
       uris: ${ELASTICSEARCH_URIS}
       repositories:
