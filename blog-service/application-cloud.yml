@@ -40,7 +40,7 @@ aws:
 
 feign:
   user-service:
-    url : ${USER_SERVICE_URL} #todo : 실제 url 로 바꾸기
+    url : ${FEIGN_USER_SERVICE_URL} #todo : 실제 url 로 바꾸기
   matching-service:
     url : ${FEIGN_MATCHING_SERVICE_URL} #todo : 실제 url 로 바꾸기
 
