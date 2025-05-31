@@ -9,7 +9,7 @@ spring:
       ddl-auto: update
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: kafka.kafka.svc.cluster.local:9092
     consumer:
       group-id: alarm-group
       auto-offset-reset: earliest
