@@ -29,7 +29,7 @@ spring:
             - Path=/ws/chat
             
         - id: alarm-service
-          uri: http://alarm-service.alarm.svc.cluster.local:8080
+          uri: http://alarm-service.alarm.svc.cluster.local:8087
           predicates:
             - Path=/api/alarm-service/**
 
