@@ -25,7 +25,8 @@ spring:
     mongodb:
       uri: ${MONGO_DB_URI}
     elasticsearch:
-      uris: ${ELASTICSEARCH_URIS}
+      uris: http://elasticsearch.blog.svc.cluster.local:9200
+      # uris: ${ELASTICSEARCH_URIS}
       repositories:
         enabled: true
       connection-timeout: 5s
