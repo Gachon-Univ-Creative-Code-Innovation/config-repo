@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: ${CLOUD_DB_URL}
-    username: ${CLOUD_DB_URL}
-    password: ${CLOUD_DB_URL}
+    username: ${CLOUD_DB_USERNAME}
+    password: ${CLOUD_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver  # (optional, 대부분 auto detect 되지만 명시해도 좋음)
   jpa:
     hibernate:
