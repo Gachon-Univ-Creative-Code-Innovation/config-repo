@@ -56,6 +56,12 @@ spring:
             - Path=/api/apigateway-service/health-check
           filters:
             - StripPrefix=2
+        - id: blog-swagger-ui
+          uri: http://blog-service.blog.svc.cluster.local:8040
+          predicates:
+            - Path=/swagger/blog-service/swagger-ui/**
+          filters:
+            - RewritePath=/swagger/blog-service/swagger-ui/(?<segment>.*), /swagger-ui/${segment}
 
 jwt:
   secret: ${JWT_SECRET}
