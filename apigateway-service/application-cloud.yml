@@ -36,10 +36,8 @@ spring:
         - id: github-service
           uri: http://github-service.github.svc.cluster.local:80
           predicates:
-            - Path=/api/career-service/**
-          filters:
-            - RewritePath=/api/career-service/(?<segment>.*), /api/career/${segment}
-
+            - Path=/api/github-service/**
+          
         - id: blog-service
           uri: http://blog-service.blog.svc.cluster.local:8030
           predicates:
