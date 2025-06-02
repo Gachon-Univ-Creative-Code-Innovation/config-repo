@@ -34,7 +34,7 @@ spring:
             - Path=/api/alarm-service/**
 
         - id: github-service
-          uri: http://github-service.github.svc.cluster.local:8080
+          uri: http://github-service.github.svc.cluster.local:80
           predicates:
             - Path=/api/career-service/**
           filters:
