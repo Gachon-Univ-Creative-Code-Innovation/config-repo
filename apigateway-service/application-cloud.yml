@@ -47,6 +47,10 @@ spring:
           uri: http://fastapi-consumer-service.matching.svc.cluster.local:80
           predicates:
             - Path=/api/matching-service/**
+        - id: portfolio-service
+          uri: http://portfolio-service.portfolio.svc.cluster.local:8080
+          predicates:
+            - Path=/api/portfolio-service/**
 
         - id: apigateway-health
           uri: forward:/health-check
