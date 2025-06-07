@@ -31,6 +31,10 @@ spring:
         enabled: true
       connection-timeout: 5s
       socket-timeout: 3s
+    redis:
+      host: redis
+      port: 6379
+      database: 1
 
 aws:
   s3:
@@ -66,3 +70,7 @@ management:
       export:
         prometheus:
           enabled: true
+
+logging:
+  level:
+    root: DEBUG
