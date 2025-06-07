@@ -19,12 +19,12 @@ spring:
             - Path=/api/summarize-service/**
 
         - id: message-service
-          uri: http://message-service.message.svc.cluster.local:8080
+          uri: http://message-service.message.svc.cluster.local:8011
           predicates:
             - Path=/api/message-service/**
 
         - id: websocket-message-service
-          uri: ws://message-service.message.svc.cluster.local:8080
+          uri: ws://message-service.message.svc.cluster.local:8011
           predicates:
             - Path=/ws/chat
             
