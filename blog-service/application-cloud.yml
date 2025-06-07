@@ -34,6 +34,7 @@ spring:
     redis:
       host: ${REDIS_HOST} 
       port: ${REDIS_PORT:6379}
+      password: null 
   
   kafka:
     bootstrap-servers: kafka.kafka.svc.cluster.local:9092
@@ -78,6 +79,4 @@ management:
         prometheus:
           enabled: true
 
-logging:
-  level:
-    root: DEBUG
+
