@@ -27,6 +27,8 @@ spring:
 jwt:
   secret: ${JWT_SECRET}
 
+user-service:
+  url: ${USER_SERVICE_URL}
 
 management:
   endpoints:
