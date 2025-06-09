@@ -54,7 +54,7 @@ spring:
         - id: roadmap-service
           uri: http://roadmap-service.roadmap.svc.cluster.local:8080
           predicates:
-            - Path=/api/roadmap-service/**
+            - Path=/api/roadmap/**
 
         - id: apigateway-health
           uri: forward:/health-check
